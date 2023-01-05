@@ -1,41 +1,28 @@
-# Compiled Lua sources
-luac.out
-
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
-
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+game.CoreGui.Rayfield.Main.Elements.Main.Start.Interact.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2207, 128, -374)
+end)
+game.CoreGui.Rayfield.Main.Elements.Main.Start.Interact.MouseButton1Down:connect(function()
+plr = game:GetService('Players').LocalPlayer
+torso = plr.Character.UpperTorso
+hum = plr.Character.Humanoid
+mouse = plr:GetMouse()
+stop = false
+while stop == false do
+local bp = Instance.new('BodyPosition')
+bp.MaxForce = Vector3.new(999999,999999,999999)
+bp.Position = torso.Position
+bp.Parent = torso
+local bav = Instance.new('BodyAngularVelocity')
+bav.MaxTorque = Vector3.new(992229,999999,999999)
+bav.AngularVelocity = Vector3.new(200,200,200)
+bav.Parent = torso
+wait()
+end
+end)
+game.CoreGui.Rayfield.Main.Elements.Main.Start.Interact.MouseButton1Down:connect(function()
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
